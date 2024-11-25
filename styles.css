@@ -1,0 +1,75 @@
+@font-face {
+    font-family: LexendRegular;
+    src: url('./fonts/Lexend-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: LexendBold;
+    src: url('./fonts/Lexend-Bold.ttf') format('truetype');
+}
+head{
+    max-height: 0;
+}
+body {
+    font-family: LexendRegular;
+    background-image: linear-gradient(#2ec6ff, #cc00ff, #ff004e);
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    font-family: LexendBold;
+    font-size: 2.5vw;
+    line-height: 1.5vw;
+}
+
+#layout-main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    padding: 1rem 1rem 1rem 1rem;
+    max-height: 96vh;
+    overflow: scroll;
+}
+#column {
+    background-color: #ffffff;
+    width: 60%;
+    border-radius: 2vw;
+    box-shadow: rgba(0,0,0,0.35) 5px 10px 30px;
+}
+#column-inner{
+    padding: 1vw 2vw 2vw 2vw;
+}
+#link-box {
+    padding: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: baseline;
+}
+#link {
+    font-size: 1.5vw;
+    font-color: #000000;
+    font-family: LexendBold;
+    text-decoration: none;
+    text-decoration-color: inherit;
+}
+#filler {
+    min-height: 3000px;
+    border-radius: 0vw;
+    border: solid;
+    border-width: 2px;
+    border-color: #dddddd;
+    padding: 0vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1vw;
+    flex-wrap: wrap;
+}
+#art-img {
+    aspect-ratio: initial;
+    max-width: 49%;
+    object-fit: contain;
+    border-radius: 2vw;
+}
