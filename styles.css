@@ -10,6 +10,13 @@
     font-family: LexendBold;
     src: url('./fonts/Lexend-Bold.ttf') format('truetype');
 }
+.shader-web-background-fallback {
+    background: url("https://placekitten.com/666/666");
+    background-image: linear-gradient(#2ca2ff, #cc00dd, #ff004e);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
 head{
     max-height: 0;
 }
