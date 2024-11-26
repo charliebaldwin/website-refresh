@@ -6,26 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>cbaldwin - home</title>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
 </head>
 <body>
+
+    <video autoplay muted loop id="bg-img">
+        <source src="./video/bg_render01.mp4" type="video/mp4">
+    </video>
+    
     <div id="layout-main">
         <div id="column">
             <div id="column-inner">
-                <h1>charlie baldwin</h1>
-                this is my portfolio site
-                <p/>
-                please browse nicely
-                <p/>
+                
+                <p id="name-header">charlie baldwin</p>
+                <p id="sub-header">technical artist // shaders // vfx // scripting // ui & ux</p>
+                
                 <div id="link-box">
-                    <a id="link" href="./blog.html">works</a>
-                    <a id="link" href="./blog.html">blog</a>
-                    <a id="link" href="./blog.html">contact</a>
-                    <a id="link" href="./blog.html">about</a>
+                    <a class="header-link" id="link-selected" href="./index.html">works</a>
+                    <a class="header-link" href="./blog.html">blog</a>
+                    <a class="header-link" href="./contact.html">contact</a>
+                    <a class="header-link" href="./blog.html">about</a>
                 </div>
-                <div id="filler">
-                    <img id="art-img" src="./images/orangutan_render_3.png" />
-                    <img id="art-img" src="./images/hand-sculpt_back.png" />
+                
+                <div id="content-section">
+                    
+                    <div class="art-grp" id="art01">
+                        <div class="art-img-container">
+                            <img class="art-img" src="./images/orangutan_render_3.png"/>
+                        </div>
+                        <div class="art-label-container">
+                            <p class="art-label">click to view this artwork dasdas</p>
+                        </div>                     
+                    </div>
+                    
+                    <div class="art-grp" id="art02">
+                        <div class="art-img-container">
+                            <img class="art-img" src="./images/hand-sculpt_back.png"/>
+                        </div>
+                        <div class="art-label-container">
+                            <p class="art-label">click to view this artwork dasdas</p>
+                        </div>
+                    </div>
+
+                    <div class="art-grp" id="art03">
+                        <div class="art-img-container">
+                            <img class="art-img" src="./images/hand-sculpt_back.png"/>
+                        </div>
+                        <div class="art-label-container">
+                            <p class="art-label">click to view this artwork dasdas</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
