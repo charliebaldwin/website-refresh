@@ -3,12 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Home 
+title: Blog 
 ---
-<h1> {{ "Goodbye world!" | downcase }}</h1>
-
-is this content?
-<h1>Latest Posts</h1>
 
 <ul>
   {% for post in site.posts %}

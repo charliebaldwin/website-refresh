@@ -1,5 +1,5 @@
 ﻿<nav id="link-box">
     {% for item in site.data.navigation %}
-    <a class="header-link" href="{{ item.link }}"{% if page.url == item.link %} id="link-selected"{% endif %}>{{ item.name }}</a>
+    <a class="header-link" href="{{ item.link }}"{% if page.url == item.link %} id="link-selected"{% endif %}>{{ item.name | downcase }}</a>
     {% endfor %}
 </nav>

@@ -31,8 +31,13 @@ github_username:  jekyll
 
 # Build settings
 theme: minima
-plugins:
+plugins: 
   - jekyll-feed
+    
+    
+collections:
+  works:
+    output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

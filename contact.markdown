@@ -5,6 +5,5 @@
 layout: default
 title: Contact 
 ---
-<h1> {{ "Goodbye world!" | downcase }}</h1>
 
 is this content?
