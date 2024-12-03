@@ -114,7 +114,7 @@ body {
     width: 100%;
     margin-outside: 4vw;
     height: min(30vh, 50vw);
-    border: dashed 1px #efefef;
+    border: dashed 0px #efefef;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
