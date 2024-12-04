@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-11-29-welcome-to-jekyll.md",
+                "file": "_posts/2024-12-02-Test-post.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2024-11-29-welcome-to-jekyll"
+              "title": "2024-12-02-Test-post"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-11-29-welcome-to-jekyll.md",
+                "file": "_posts/2024-12-02-Test-post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2024-11-29-welcome-to-jekyll"
+              "title": "Backlinks for 2024-12-02-Test-post"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-11-29-welcome-to-jekyll.md"
+                "file": "_posts/2024-12-02-Test-post.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 2024-11-29-welcome-to-jekyll"
+              "title": "Outline of 2024-12-02-Test-post"
             }
           }
         ]
@@ -164,20 +164,22 @@
   },
   "active": "f0315db386c2b2ab",
   "lastOpenFiles": [
+    "about.md~",
+    "_includes/captioned-image.html",
+    "_site/assets/css/blogpost.css",
+    "assets/css/blogpost.css",
+    "templates/template_post.md",
+    "_posts/2024-12-02-Test-post.md",
+    "_posts/2024-11-29-welcome-to-jekyll.md",
     "_posts/2018-08-20-bananas.md",
     "_site/blog/2018/08/20/bananas.html",
     "_site/blog/2018/08/20",
+    "_site/blog/2018/08/02/bananas.html",
+    "_site/blog/2018/08/02",
     "_site/blog/2018/08",
     "_site/blog/2018",
-    "_site/2024/12/02/2018-08-20-bananas.html",
-    "_site/2024/12/02",
-    "_site/2024/12",
-    "_site/2024",
-    "_site/blog/2024/11/29/welcome-to-jekyll.html",
-    "_site/blog/2024/11/29",
-    "_posts/2024-11-29-welcome-to-jekyll.md",
+    "_site/blog/2024/07/19/bananas.html",
     "_posts/2024-12-02 Test post.md",
-    "templates/template_post.md",
     "about.md",
     "_works/work01.md",
     "index.md",

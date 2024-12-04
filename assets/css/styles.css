@@ -75,7 +75,7 @@ body {
     justify-items: center;
 }
 #column-inner{
-    width: max(50%, min(450px, 70%));
+    width: max(50%, min(630px, 75%));
     padding: 2vh 2vw 2vw 2vw;
 }
 #link-box {
@@ -129,7 +129,7 @@ body {
     max-height: 85%;
     width: 100%;
     overflow: clip;
-    box-shadow: rgba(0,0,0,0.35) 4px 4px 10px;
+    box-shadow: rgba(0,0,0,0.2) 4px 4px 10px;
 }
 .art-img {
     object-fit: fill;
@@ -161,4 +161,54 @@ body {
     box-shadow: rgba(0,0,0,0) 2px 2px 6px;
     overflow: clip;
 }
+
+.blog-links-grp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1vh;
+}
+.blog-link-container {
+    border: solid 0px black;
+    box-shadow: rgba(0,0,0,0.2) 3px 3px 10px;
+    border-radius: max(1vw, 10px);
+    padding: max(1.5vw, 12px);
+}
+.blog-link {
+    font-color: #000000;
+    color: #000000;
+    text-decoration: none;
+    text-decoration-color: inherit;
+}
+.blog-link-title-grp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 max(0.4vw, 6px) 0;
+
+}
+.blog-link-title {
+     margin: 0;
+     font-size: max(1.4vw, 16px);
+     line-height: max(1.4vw, 18px);
+     font-color: #000000;
+     color: #000000;
+     font-family: LexendBold;
+     text-decoration: none;
+     text-decoration-color: inherit;
+}
+.blog-link-date {
+    margin: 0;
+    font-size: max(1vw, 10px);
+    font-color: #000000;
+    color: #000000;
+    font-family: LexendRegular;
+    text-decoration: none;
+    text-decoration-color: inherit;
+    text-align: end;
+}
+.blog-link-desc {
+    font-size: max(1vw, 8px);
+}
+
 

@@ -6,11 +6,16 @@ layout: default
 title: Blog 
 ---
 
-<ul>
+<div class="blog-links-grp">
   {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
+    <a class="blog-link" href="{{ post.url }}">
+        <div class="blog-link-container">
+            <div class="blog-link-title-grp">
+                <h2 class="blog-link-title">{{ post.title }} </h2>
+                <p class="blog-link-date">{{ post.date | date:"%b %-d, %Y" }} </p>
+            </div>
+            <p class="blog-link-desc">{{ post.content | strip_html | truncatewords: 30 }} </p>
+        </div>
+    </a>
   {% endfor %}
-</ul>
+</div>
