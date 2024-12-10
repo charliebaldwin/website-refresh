@@ -6,6 +6,7 @@
     uniform float iTimeInit;
     uniform vec2 iRes;
     uniform vec2 iMouse;
+    uniform float iSmooth;
     
     
     float hash(vec2 p) {
@@ -62,34 +63,34 @@
         float circleMouse1 = sdfCircle(p, vec2(iMouse.x - (iRes.x / 2.0), iMouse.y - (iRes.y / 2.0)), 0.008 * iRes.x); 
         float circleMouse2 = sdfCircle(p, vec2(0.02 * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.02 * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
         
-        float blob01 = movingBlob(p, 59.21 * iTimeInit, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
-        float blob02 = movingBlob(p, 22.94 * iTimeInit, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
-        float blob03 = movingBlob(p, 69.44 * iTimeInit, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
-        float blob04 = movingBlob(p, 19.21 * iTimeInit, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
-        float blob05 = movingBlob(p, 122.9 * iTimeInit, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
-        float blob06 = movingBlob(p, 32.44 * iTimeInit, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
-        float blob07 = movingBlob(p, 51.21 * iTimeInit, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
-        float blob08 = movingBlob(p, 28.94 * iTimeInit, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
-        float blob09 = movingBlob(p, 62.44 * iTimeInit, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
-        float blob10 = movingBlob(p, 11.21 * iTimeInit, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
-        float blob11 = movingBlob(p, 14.92 * iTimeInit, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
-        float blob12 = movingBlob(p, 39.44 * iTimeInit, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
+        float blob01 = movingBlob(p, 59.21, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
+        float blob02 = movingBlob(p, 22.94, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
+        float blob03 = movingBlob(p, 69.44, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
+        float blob04 = movingBlob(p, 19.21, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
+        float blob05 = movingBlob(p, 122.9, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
+        float blob06 = movingBlob(p, 32.44, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
+        float blob07 = movingBlob(p, 51.21, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
+        float blob08 = movingBlob(p, 28.94, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
+        float blob09 = movingBlob(p, 62.44, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
+        float blob10 = movingBlob(p, 11.21, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 60.0));
+        float blob11 = movingBlob(p, 14.92, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(12.0, 80.0));
+        float blob12 = movingBlob(p, 39.44, 0.6, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(40.0, 8.0));
         
-        float d = smoothMin(rect, blob01, 20.0);
-        d = smoothMin(d, blob02, 60.0);
-        d = smoothMin(d, blob03, 60.0);
-        d = smoothMin(d, blob04, 60.0);
-        d = smoothMin(d, blob05, 60.0);
-        d = smoothMin(d, blob06, 60.0);
-        d = smoothMin(d, blob07, 60.0);
-        d = smoothMin(d, blob08, 60.0);
-        d = smoothMin(d, blob09, 60.0);
-        d = smoothMin(d, blob10, 60.0);
-        d = smoothMin(d, blob11, 60.0);
-        d = smoothMin(d, blob12, 60.0);
+        float d = smoothMin(rect, blob01, iSmooth * 20.0);
+        d = smoothMin(d, blob02, iSmooth * 60.0);
+        d = smoothMin(d, blob03, iSmooth * 60.0);
+        d = smoothMin(d, blob04, iSmooth * 60.0);
+        d = smoothMin(d, blob05, iSmooth * 60.0);
+        d = smoothMin(d, blob06, iSmooth * 60.0);
+        d = smoothMin(d, blob07, iSmooth * 60.0);
+        d = smoothMin(d, blob08, iSmooth * 60.0);
+        d = smoothMin(d, blob09, iSmooth * 60.0);
+        d = smoothMin(d, blob10, iSmooth * 60.0);
+        d = smoothMin(d, blob11, iSmooth * 60.0);
+        d = smoothMin(d, blob12, iSmooth * 60.0);
         
-        d = smoothMin(d, circleMouse1, 70.0);
-        d = smoothMin(d, circleMouse2, 30.0);
+        d = smoothMin(d, circleMouse1, iSmooth * 70.0);
+        d = smoothMin(d, circleMouse2, iSmooth * 30.0);
         
         return d;
     }
@@ -106,31 +107,52 @@
         if (distance(gl_FragCoord.xy, iMouse.xy) < 30.) {
             color = vec4(1.0, 1.0, 1.0, 1.0);
         } 
-      
-        //d = floor(1.01 - clamp(d / 100.0, 0.0, 1.0));
-    
+          
         vec4 gradient = mix(vec4(1.0, 0.0, 0.5, 1.0), vec4(0.1, 0.6, 1.0, 1.0), gl_FragCoord.y / iRes.y);
                     
-        d = pow(1.0 - clamp(d, 0.0, 1.0), 0.3); 
-        
+        d = pow(1.0 - clamp(d, 0.0, 1.0), 0.2); 
+        //d = d < 0.9 ? 0.0 : 1.0;
         color = mix(gradient, vec4(1.0,1.0,1.0,1.0), d);
         
-        //d = d > 0.9 ? 0.0 : 1.0;
+        
         //color = vec4(d,d,d,1.0);
         gl_FragColor = color;
     }
 </script>
 <script>
-    // mouse coordinates taken from from the mousemove event
+    // mouse coordinates taken from the mousemove event
     var mouseX;
     var mouseY;
+    var smooth = 1.0;
+    var targetSmooth = 1.0;
+    var smoothLerp = 0.95;
+    
+    var mouseV = 1.0;
 
     var timeInit;
 
     document.addEventListener("mousemove", (event) => {
+        mouseV = 1 + Math.min(0.15 * (Math.abs(mouseX - event.clientX) + Math.abs(mouseY - event.clientY)), 7.5);
         mouseX = event.clientX;
         mouseY = event.clientY;
     });
+    document.addEventListener("mouseleave", (event) => {
+        mouseV = 1;
+    });
+    document.addEventListener("mousedown", startPress);
+    document.addEventListener("mouseup", endPress);
+    document.addEventListener("touchstart", startPress);
+    document.addEventListener("touchend", endPress);
+    document.addEventListener("touchcancel", endPress);
+
+    function startPress() {
+        targetSmooth = 0.4;
+        smoothLerp = 0.92;
+    }
+    function endPress() {
+        targetSmooth = 3.0;
+        smoothLerp = 0.97;
+    }
 
     // mouse coordinates relative to the shader, you can also store them on the context
     var shaderMouseX;
@@ -141,18 +163,26 @@
             mouseX = ctx.cssWidth / 2;
             mouseY = ctx.cssHeight / 2;
             timeInit = new Date().getMilliseconds();
+            //timeInit = performance.timeOrigin;
+            //timeInit = 1.0;
+            /*targetSmooth = 1.0;
+            smooth = targetSmooth;
+            smoothLerp = 0.95;*/
         },
         onBeforeFrame: (ctx) => {
             shaderMouseX = ctx.toShaderX(mouseX);
             shaderMouseY = ctx.toShaderY(mouseY);
+            smooth = smooth * smoothLerp + (targetSmooth * mouseV) * (1.0 - smoothLerp);
         },
         shaders: {
             image: {
                 uniforms: {
                     iTime: (gl, loc) => gl.uniform1f(loc, 0.5 * (performance.now() / 1000)),
+                    //iTime: (gl, loc) => gl.uniform1f(loc, Date.now() / 1000),
                     iTimeInit: (gl, loc) => gl.uniform1f(loc, timeInit),
                     iRes: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
-                    iMouse: (gl, loc) => gl.uniform2f(loc, shaderMouseX, shaderMouseY)
+                    iMouse: (gl, loc) => gl.uniform2f(loc, shaderMouseX, shaderMouseY),
+                    iSmooth: (gl, loc) => gl.uniform1f(loc, smooth)
                 }
             }
         }

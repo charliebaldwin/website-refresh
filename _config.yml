@@ -49,6 +49,7 @@ collections:
 #
 exclude: 
   - templates/
+  - README.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
