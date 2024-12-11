@@ -70,7 +70,7 @@
         float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
 
         float circleMouse1 = sdfCircle(p, vec2(iMouse.x - (iRes.x / 2.0), iMouse.y - (iRes.y / 2.0)), 0.008 * iRes.x); 
-        float circleMouse2 = sdfCircle(p, vec2(0.02 * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.02 * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
+        float circleMouse2 = sdfCircle(p, vec2(0.013 * iSmooth * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.013 * iSmooth * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
         
         float blob01 = movingBlob(p, 59.21, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 40.0));
         float blob02 = movingBlob(p, 22.94, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(20.0, 50.0));
@@ -132,11 +132,14 @@
     // mouse coordinates taken from the mousemove event
     var mouseX;
     var mouseY;
-    var smooth = 1.0;
-    var targetSmooth = 1.0;
-    var smoothLerp = 0.95;
+    var targetMouseX;
+    var targetMouseY;
+    var mouseLerp = 0.1;
+    var smooth = 0.0;
+    var targetSmooth = 2.0;
+    var smoothLerp = 0.97;
     
-    var mouseV = 1.0;
+    var mouseV = 2.0;
 
     var seed1;
     var seed2;
@@ -144,9 +147,9 @@
     var timeInit;
 
     document.addEventListener("mousemove", (event) => {
-        mouseV = 1 + Math.min(0.1 * (Math.abs(mouseX - event.clientX) + Math.abs(mouseY - event.clientY)), 6);
-        mouseX = event.clientX;
-        mouseY = event.clientY;
+        mouseV = 1 + Math.min(0.1 * (Math.abs(targetMouseX - event.clientX) + Math.abs(targetMouseY - event.clientY)), 6);
+        targetMouseX = event.clientX;
+        targetMouseY = event.clientY;
     });
     document.addEventListener("mouseout", (event) => {
         mouseV = 1;
@@ -163,8 +166,8 @@
         smoothLerp = 0.92;
     }
     function endPress() {
-        targetSmooth = 3.0;
-        smoothLerp = 0.97;
+        targetSmooth = 2.0;
+        smoothLerp = 0.985;
     }
 
     // mouse coordinates relative to the shader, you can also store them on the context
@@ -177,6 +180,8 @@
             seed2 = Math.random();
             mouseX = ctx.cssWidth / 2;
             mouseY = ctx.cssHeight / 2;
+            targetMouseX = ctx.cssWidth / 2;
+            targetMouseY = ctx.cssHeight / 2;
             timeInit = new Date().getMilliseconds();
             //timeInit = performance.timeOrigin;
             //timeInit = 1.0;
@@ -188,11 +193,15 @@
             shaderMouseX = ctx.toShaderX(mouseX);
             shaderMouseY = ctx.toShaderY(mouseY);
             smooth = smooth * smoothLerp + (targetSmooth * mouseV) * (1.0 - smoothLerp);
+
+            mouseX = mouseX * (1-mouseLerp) + targetMouseX * mouseLerp;
+            mouseY = mouseY * (1-mouseLerp) + targetMouseY * mouseLerp;
+
         },
         shaders: {
             image: {
                 uniforms: {
-                    iTime: (gl, loc) => gl.uniform1f(loc, 0.5 * (performance.now() / 1000)),
+                    iTime: (gl, loc) => gl.uniform1f(loc, 0.3 * (performance.now() / 1000)),
                     //iTime: (gl, loc) => gl.uniform1f(loc, Date.now() / 1000),
                     iTimeInit: (gl, loc) => gl.uniform1f(loc, timeInit),
                     iRes: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
@@ -209,7 +218,7 @@
     <title> artwork02 </title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/blogpost.css">
-    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon"       href="/assets/images/favicon.png" type="image/x-icon">
 </head>
 <body>
 <div id="layout-main">
@@ -217,7 +226,7 @@
         <div id="column-inner">
 
             <p id="name-header">charlie baldwin</p>
-<p id="sub-header">technical artist // shaders // vfx // scripting // ui & ux</p>
+<p id="sub-header">technical artist // shaders // vfx // interactive media</p>
 
             <nav id="link-box">
     
@@ -228,17 +237,17 @@
     <a class="header-link" href="/about.html">about</a>
     
 </nav>
-            
+<p></p>
+
             <div id="blog-post-section">
                 <h1 class="blog-post-title"> artwork02 </h1>
-                <p class="blog-post-date">Dec 10, 2024 </p>
                 <img src=""/>
                 <p>this is an artwork!</p>
 
-            </div> 
+            </div>
         </div>
     </div>
 </div>
- 
+
 </body>
 </html>

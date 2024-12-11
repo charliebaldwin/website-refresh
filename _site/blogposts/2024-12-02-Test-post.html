@@ -70,7 +70,7 @@
         float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
 
         float circleMouse1 = sdfCircle(p, vec2(iMouse.x - (iRes.x / 2.0), iMouse.y - (iRes.y / 2.0)), 0.008 * iRes.x); 
-        float circleMouse2 = sdfCircle(p, vec2(0.02 * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.02 * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
+        float circleMouse2 = sdfCircle(p, vec2(0.013 * iSmooth * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.013 * iSmooth * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
         
         float blob01 = movingBlob(p, 59.21, 0.5, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(10.0, 40.0));
         float blob02 = movingBlob(p, 22.94, 0.7, vec2(0.1, 0.9), vec2(0.2, 0.8), vec2(20.0, 50.0));
@@ -132,11 +132,14 @@
     // mouse coordinates taken from the mousemove event
     var mouseX;
     var mouseY;
-    var smooth = 1.0;
-    var targetSmooth = 1.0;
-    var smoothLerp = 0.95;
+    var targetMouseX;
+    var targetMouseY;
+    var mouseLerp = 0.1;
+    var smooth = 0.0;
+    var targetSmooth = 2.0;
+    var smoothLerp = 0.97;
     
-    var mouseV = 1.0;
+    var mouseV = 2.0;
 
     var seed1;
     var seed2;
@@ -144,9 +147,9 @@
     var timeInit;
 
     document.addEventListener("mousemove", (event) => {
-        mouseV = 1 + Math.min(0.1 * (Math.abs(mouseX - event.clientX) + Math.abs(mouseY - event.clientY)), 6);
-        mouseX = event.clientX;
-        mouseY = event.clientY;
+        mouseV = 1 + Math.min(0.1 * (Math.abs(targetMouseX - event.clientX) + Math.abs(targetMouseY - event.clientY)), 6);
+        targetMouseX = event.clientX;
+        targetMouseY = event.clientY;
     });
     document.addEventListener("mouseout", (event) => {
         mouseV = 1;
@@ -163,8 +166,8 @@
         smoothLerp = 0.92;
     }
     function endPress() {
-        targetSmooth = 3.0;
-        smoothLerp = 0.97;
+        targetSmooth = 2.0;
+        smoothLerp = 0.985;
     }
 
     // mouse coordinates relative to the shader, you can also store them on the context
@@ -177,6 +180,8 @@
             seed2 = Math.random();
             mouseX = ctx.cssWidth / 2;
             mouseY = ctx.cssHeight / 2;
+            targetMouseX = ctx.cssWidth / 2;
+            targetMouseY = ctx.cssHeight / 2;
             timeInit = new Date().getMilliseconds();
             //timeInit = performance.timeOrigin;
             //timeInit = 1.0;
@@ -188,11 +193,15 @@
             shaderMouseX = ctx.toShaderX(mouseX);
             shaderMouseY = ctx.toShaderY(mouseY);
             smooth = smooth * smoothLerp + (targetSmooth * mouseV) * (1.0 - smoothLerp);
+
+            mouseX = mouseX * (1-mouseLerp) + targetMouseX * mouseLerp;
+            mouseY = mouseY * (1-mouseLerp) + targetMouseY * mouseLerp;
+
         },
         shaders: {
             image: {
                 uniforms: {
-                    iTime: (gl, loc) => gl.uniform1f(loc, 0.5 * (performance.now() / 1000)),
+                    iTime: (gl, loc) => gl.uniform1f(loc, 0.3 * (performance.now() / 1000)),
                     //iTime: (gl, loc) => gl.uniform1f(loc, Date.now() / 1000),
                     iTimeInit: (gl, loc) => gl.uniform1f(loc, timeInit),
                     iRes: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
@@ -206,10 +215,10 @@
     });
 </script>
 
-    <title> Welcome to Jekyll! </title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title> Sample Blog Post </title>
+    <link rel="stylesheet" href="/assets/css/styles.css"> 
     <link rel="stylesheet" href="/assets/css/blogpost.css">
-    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon"       href="/assets/images/favicon.png" type="image/x-icon">
 </head>
 <body>
 <div id="layout-main">
@@ -217,7 +226,7 @@
         <div id="column-inner">
 
             <p id="name-header">charlie baldwin</p>
-<p id="sub-header">technical artist // shaders // vfx // scripting // ui & ux</p>
+<p id="sub-header">technical artist // shaders // vfx // interactive media</p>
 
             <nav id="link-box">
     
@@ -228,28 +237,22 @@
     <a class="header-link" href="/about.html">about</a>
     
 </nav>
+<p></p>
             
             <div id="blog-post-section">
-                <h1 class="blog-post-title"> Welcome to Jekyll! </h1>
-                <p class="blog-post-date">Nov 29, 2024 </p>
-                <img src=""/>
-                <p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+                <h1 class="blog-post-title"> Sample Blog Post </h1>
+                <p class="blog-post-date">Dec 2, 2024 </p>
+                <h2 id="new-post-header">new post header</h2>
+<p>Lorem ipsum odor amet, consectetuer adipiscing elit. Senectus euismod massa tortor leo facilisi urna duis. Id ridiculus adipiscing tortor urna nibh feugiat orci molestie. Duis id elementum suspendisse, ullamcorper imperdiet fames rutrum ut. Sodales diam porttitor egestas suspendisse; habitant ex. Venenatis euismod magna feugiat aliquam molestie cubilia vivamus turpis. Hendrerit scelerisque nascetur justo massa vivamus eget.</p>
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+<figure class="captioned-image">
+    <img src="/assets/images/sample.jpg" alt="Sample figure caption maybe??" />
+    <figcaption>Sample figure caption maybe??</figcaption>
+</figure>
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+<p>Lorem ipsum odor amet, consectetuer adipiscing elit. Senectus euismod massa tortor leo facilisi urna duis. Id ridiculus adipiscing tortor urna nibh feugiat orci molestie. Duis id elementum suspendisse, ullamcorper imperdiet fames rutrum ut. Sodales diam porttitor egestas suspendisse; habitant ex. Venenatis euismod magna feugiat aliquam molestie cubilia vivamus turpis. Hendrerit scelerisque nascetur justo massa vivamus eget.</p>
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
-
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p>Lorem ipsum odor amet, consectetuer adipiscing elit. Senectus euismod massa tortor leo facilisi urna duis. Id ridiculus adipiscing tortor urna nibh feugiat orci molestie. Duis id elementum suspendisse, ullamcorper imperdiet fames rutrum ut. Sodales diam porttitor egestas suspendisse; habitant ex. Venenatis euismod magna feugiat aliquam molestie cubilia vivamus turpis. Hendrerit scelerisque nascetur justo massa vivamus eget.</p>
 
 
             </div> 

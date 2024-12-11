@@ -6,13 +6,19 @@ layout: default
 title: About 
 ---
 
+<div id="about-text-container">
+
 Hey there! My name's Charlie, and I'm a Technical Artist with a broad set of skills and interests.
+
+<p></p>
 
 My favorite thing about technical art is problem-solving.
 I love digging into new technical challenges, learning new techniques and workflows, and ultimately coming out the other end with something sick looking.
+
+<p></p>
 
 My experience covers many areas within game development and real-time digital art, including 3D animation & character rigging,
 shader development & optimization, tool & automation programming, UI design, and more.
 
 
-
+</div>

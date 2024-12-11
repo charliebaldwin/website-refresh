@@ -8,7 +8,7 @@ title: Home
 {% for work in site.works %}
 <div class="art-grp" id="art01">
     <div class="art-img-container">
-        <a href="{{ work.url }}"><img class="art-img" src="{{ work.image }}"/></a>
+        <a href="{{ work.url }}"><img class="art-img" src=".{{ work.image }}"/></a>
     </div>
     <div class="art-label-container">
         <p class="art-label">{{ work.description }}</p>

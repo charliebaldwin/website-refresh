@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dfa464d-97c9-4f79-993d-9c0465690dba" name="Changes" comment="added files">
+      <change afterPath="$PROJECT_DIR$/_layouts/work.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/navigation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_includes/shader.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/shader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-08-20-bananas.md" beforeDir="false" afterPath="$PROJECT_DIR$/_blogposts/2018-08-20-bananas.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2024-11-29-welcome-to-jekyll.md" beforeDir="false" afterPath="$PROJECT_DIR$/_blogposts/2024-11-29-welcome-to-jekyll.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2024-12-02-Test-post.md" beforeDir="false" afterPath="$PROJECT_DIR$/_blogposts/2024-12-02-Test-post.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/assets/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2018/08/20/bananas.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2018/08/20/bananas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/11/29/welcome-to-jekyll.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/11/29/welcome-to-jekyll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/12/02/Test-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/12/02/Test-post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2018/08/20/bananas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2024/11/29/welcome-to-jekyll.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2024/12/02/Test-post.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
@@ -20,6 +31,14 @@
       <change beforePath="$PROJECT_DIR$/_site/works/work02.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/works/work02.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/works/work03.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/works/work03.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/works/work04.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/works/work04.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_works/work01.md" beforeDir="false" afterPath="$PROJECT_DIR$/_works/work01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_works/work02.md" beforeDir="false" afterPath="$PROJECT_DIR$/_works/work02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_works/work03.md" beforeDir="false" afterPath="$PROJECT_DIR$/_works/work03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_works/work04.md" beforeDir="false" afterPath="$PROJECT_DIR$/_works/work04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/about.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +118,7 @@
       <workItem from="1732930294016" duration="2041000" />
       <workItem from="1732939474684" duration="9761000" />
       <workItem from="1733183654302" duration="8686000" />
-      <workItem from="1733872677862" duration="2979000" />
+      <workItem from="1733872677862" duration="7054000" />
     </task>
     <task id="LOCAL-00001" summary="figuring out more jekyll stuff">
       <option name="closed" value="true" />

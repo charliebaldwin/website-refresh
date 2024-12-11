@@ -7,7 +7,7 @@ title: Blog
 ---
 
 <div class="blog-links-grp">
-  {% for post in site.posts %}
+  {% for post in site.blogposts %}
     <a class="blog-link" href="{{ post.url }}">
         <div class="blog-link-container">
             <div class="blog-link-title-grp">

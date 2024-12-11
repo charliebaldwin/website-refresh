@@ -1,10 +1,11 @@
 ---
-layout: post
-title:  "artwork01"
+layout: work
+title:  "My First Artwork"
 categories: works
 image: /assets/images/sample.jpg
 description: default uv texture
 ---
+
 this is an artwork!
 
-artwork1! woohoo!
+This is the first post here! I hope I put cool stuff up on these pages!!!

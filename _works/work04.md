@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: work
 title:  "artwork03"
 categories: works
 image: /assets/images/orangutan_render_3.png
