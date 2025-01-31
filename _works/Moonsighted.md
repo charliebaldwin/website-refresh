@@ -5,7 +5,7 @@ categories: works
 image: /assets/images/moonsighted/banner2.jpg
 description: Moonsighted
 ---
-	![cover](/assets/images/moonsighted/banner2.jpg)
+![cover](/assets/images/moonsighted/banner2.jpg)
 ## Game Summary
 _Moonsighted_ is a PC third-person hack-and-slash adventure about cultural and political strife in the face of technology and progress amongst moon-worshipping moths trapped in a cavern. Play as Mairu, a moth miner using the power of cave crystals to empower himself and lift his people out of the depths of the earth.  
 
