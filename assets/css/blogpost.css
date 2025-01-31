@@ -4,7 +4,7 @@
     border: dashed 0px #dddddd;
     padding-left:  4vw;
     padding-right: 4vw;
-    padding-top: 2vh;
+    padding-top: 1vh;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -24,15 +24,25 @@
 }
 h2 {
     margin: 0;
+    margin-top: 2vh;
     font-size: max(1.3vw, 14px);
 }
+h3 {
+    margin: 0;
+    margin-top: 1vh;
+    font-size: max(1.1vw, 12px);
+
+}
 p {
-    font-size: max(1vw, 12px);
+    font-size: max(1vw, 10px);
+    margin:0
 }
 img {
     max-width: 100%;
     object-fit: scale-down;
     padding: 0vw;
+    border-radius: 1vw;
+    margin: 0
 }
 em {
     text-align: center;
@@ -40,7 +50,13 @@ em {
 figure {
     margin-left: 8vw;
     margin-right: 8vw;
+    justify-items: center;
 }
 figcaption {
     text-align: center;
+    font-size: max(0.9vw, 8px);
+    font-style: italic;
+}
+.captioned-image {
+    max-height: 40vh;
 }
