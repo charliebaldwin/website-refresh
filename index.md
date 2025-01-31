@@ -5,7 +5,6 @@
 layout: default
 title: Home 
 ---
-this is sample text to see if the migration pipeline works!
 {% for work in site.works %}
 <div class="art-grp" id="art01">
     <div class="art-img-container">
