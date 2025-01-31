@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    {% include shader.html %}
+
+    <title> cbaldwin - {{ page.title | downcase }} </title>
+    <link rel="stylesheet" href="{% link /assets/css/styles.css %}">
+    <link rel="icon"       href="{% link /assets/images/favicon.png %}" type="image/x-icon">
+</head>
+<body> 
+
+<!-- <video autoplay muted loop id="bg-img">
+     <source src="./video/bg_render01.mp4" type="video/mp4">
+ </video> -->
+
+<div id="layout-main">
+    <div id="column">
+        <div id="column-inner">
+            
+            {% include header.html %}
+            {% include navigation.html %}
+            <div id="content-section">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
