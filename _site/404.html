@@ -139,7 +139,7 @@
     var targetSmooth = 2.0;
     var smoothLerp = 0.97;
     
-    var mouseV = 2.0;
+    var mouseV = 0.0;
 
     var seed1;
     var seed2;
@@ -148,6 +148,7 @@
 
     document.addEventListener("mousemove", (event) => {
         mouseV = 1 + Math.min(0.1 * (Math.abs(targetMouseX - event.clientX) + Math.abs(targetMouseY - event.clientY)), 6);
+        //mouseV = 1;
         targetMouseX = event.clientX;
         targetMouseY = event.clientY;
     });
@@ -192,7 +193,8 @@
         onBeforeFrame: (ctx) => {
             shaderMouseX = ctx.toShaderX(mouseX);
             shaderMouseY = ctx.toShaderY(mouseY);
-            smooth = smooth * smoothLerp + (targetSmooth * mouseV) * (1.0 - smoothLerp);
+            //smooth = smooth * smoothLerp + (targetSmooth * mouseV) * (1.0 - smoothLerp);
+            smooth = smooth * smoothLerp + targetSmooth * (1.0 - smoothLerp);
 
             mouseX = mouseX * (1-mouseLerp) + targetMouseX * mouseLerp;
             mouseY = mouseY * (1-mouseLerp) + targetMouseY * mouseLerp;
