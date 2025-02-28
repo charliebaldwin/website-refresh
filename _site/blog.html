@@ -67,7 +67,8 @@
     }
     float sceneDistance(vec2 p) {
        
-        float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
+        //float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
+        float rect = sdfRect(p,    iRes * 0.5 * vec2(1.0, 1.0),     vec2( max(0.256*iRes.x, min(260.0, 0.375*iRes.x)),  0.453*iRes.y),      20.0);
 
         float circleMouse1 = sdfCircle(p, vec2(iMouse.x - (iRes.x / 2.0), iMouse.y - (iRes.y / 2.0)), 0.008 * iRes.x); 
         float circleMouse2 = sdfCircle(p, vec2(0.013 * iSmooth * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.013 * iSmooth * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
@@ -219,6 +220,7 @@
 
     <title> cbaldwin - blog </title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/images.css">
     <link rel="icon"       href="/assets/images/favicon.png" type="image/x-icon">
 </head>
 <body> 
