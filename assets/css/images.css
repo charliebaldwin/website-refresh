@@ -1,0 +1,24 @@
+.captioned-image {
+    max-height: 40vh;
+}
+.img-banner { 
+    border-radius: 1.5vw;
+}
+figure {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    justify-items: center;
+}
+figcaption {
+    text-align: center;
+    font-size: max(0.9vw, 8px);
+    font-style: italic;
+}
+img {
+    max-width: 100%;
+    object-fit: scale-down;
+    padding: 0vw;
+    border-radius: 0.5vw;
+    margin: 0;
+}
+
