@@ -8,6 +8,9 @@ title: About
 
 <div id="about-text-container">
 
+TEST LINE :O
+<p></p>
+
 Hey there! My name's Charlie, and I'm a Technical Artist with a broad set of skills and interests.
 
 <p></p>
