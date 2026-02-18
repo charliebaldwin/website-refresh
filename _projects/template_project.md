@@ -1,9 +1,9 @@
 ---
-layout: work
+layout: project
 title: Template
-categories: works
-image: /assets/images/template_banner.jpg
-description: Work Template
+categories: projects
+image: /assets/images/sample_image.webp
+description: Project Template
 ---
 ![cover](/assets/images/template_banner.jpg)
 ## Section H2

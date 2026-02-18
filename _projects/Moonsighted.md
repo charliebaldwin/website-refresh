@@ -1,7 +1,7 @@
 ---
-layout: work
+layout: project
 title: Moonsighted
-categories: works
+categories: projects
 image: /assets/images/moonsighted/banner2.jpg
 description: Moonsighted
 ---
@@ -19,7 +19,7 @@ In 2022, we showcased Moonsighted at PAX East in Boston as part of the WPI expo 
 ## My Responsibilities
 I was the principal artist on the team, and was responsible for concept art, character art & animation, environment art, lighting, and level design, with Jasmine Duerk producing additional concept art and environmental models.
 ### Characters
-{% include captioned-image.html url="/assets/images/moonsighted/mairu.jpg" description="Moonsighted's playable protagonist, a moth named Mairu" %}
+{% include captioned-image.html url="/assets/images/moonsighted/mairu.webp" description="Moonsighted's playable protagonist, a moth named Mairu" %}
 The design of the moth characters was based on real-world luna moths, reinforcing the moon theme. There are two alternative colors for the moth's textures, one for regular moths and one for those that have activated their "moonsighted" powers.
 For the art pipeline, I made the base model in Blender, which I was starting to learn at the time, imported to ZBrush to sculpt the hipoly model, then brought it to Maya for retopology & UVs as I was more used to those tools. I made both texture sets in Substance Painter. Mixamo was used for rigging & animation in order to save time in our short production schedule, but I did correct skinning issues in Maya before importing to Unity.
 

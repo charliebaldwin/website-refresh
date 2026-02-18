@@ -5,13 +5,14 @@
 layout: default
 title: Home 
 ---
-{% for work in site.works %}
+{% for project in site.projects %}
 <div class="art-grp" id="art01">
-    <div class="art-img-container">
-        <a href="{{ work.url }}"><img class="art-img" src=".{{ work.image }}"/></a>
-    </div>
     <div class="art-label-container">
-        <p class="art-label">{{ work.description }}</p>
+        <p class="art-label">{{ project.description }}</p>
     </div>
+    <!-- <div class="art-img-container"> -->
+    <a href="{{ project.url }}" class="art-img-container"><img class="art-img" src=".{{ project.image }}"/></a>
+    <!-- </div> -->
+    
 </div>
 {% endfor %}

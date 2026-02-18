@@ -1,8 +1,8 @@
 ---
-layout: work
+layout: project
 title:  "My First Artwork"
-categories: works
-image: /assets/images/sample.jpg
+categories: projects
+image: /assets/images/sample_image.webp
 description: default uv texture
 ---
 

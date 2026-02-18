@@ -115,10 +115,12 @@ body {
     min-height: 0px;
     border-radius: 0vw;
     border: dashed 0px #dddddd;
-    padding: 0vw 2vw 0vw 2vw;
+    padding-left:  4vw;
+    padding-right: 4vw;
+    padding-top: 1vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: flex-start;
     gap: 1vw;
     flex-wrap: wrap;
@@ -143,32 +145,38 @@ body {
     height: min(30vh, 50vw);
     border: dashed 0px #efefef;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;   
 }
 .art-img-container {
     border-width: 0px;
-    border-style: dashed;
     border-color: #00ff00;
     border-radius: max(1vw, 16px);
-    align-items: stretch;
-    max-height: 85%;
-    width: 100%;
+    /* align-items:normal; */
+    justify-items: center;
+    aspect-ratio: 1.33333333;
+    /* max-height: 85%; */
+    width: 50%;
     overflow: clip;
+    padding: 0;
+
     box-shadow: rgba(0,0,0,0.2) 4px 4px 10px;
 }
 .art-img {
-    object-fit: fill;
-    object-position: top;
-    border-radius: 1vw;
-    width: 100%;
+    object-fit:fill;
+    /* aspect-ratio: 1.33333333; */
+    /* object-position: top; */
+    /* border-radius: 1vw; */
+    /* width: 100%; */
+    height: 100%;
 }
 .art-label-container {
     border-width: 0px;
     border-style: solid;
     border-color: #0000ff;
-    flex-grow: .5;
+    /* flex-grow: .5; */
+    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -176,12 +184,12 @@ body {
 }
 .art-label {
     margin: 0;
-    font-family: LexendRegular;
+    font-family: LexendBold;
     font-color: #000000;
-    font-size: max(1rem, 12px);
+    font-size: max(2rem, 24px);
     padding: 0.5rem 1rem 0.5rem 1rem;
     width: 100%;
-    text-align: center;
+    text-align: left;
     text-anchor: end;
     border-color: #ff0000;
     border-radius: 1vw;

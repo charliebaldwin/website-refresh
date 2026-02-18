@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
+    <title> Moonsighted </title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/blogpost.css">
+    <link rel="stylesheet" href="/assets/css/images.css">
+    <link rel="icon"       href="/assets/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+<div id="layout-main">
+    <div id="column">
+        <div id="column-inner">
+            <p id="name-header">charlie baldwin</p>
+<p id="sub-header">technical artist // shaders // vfx // interactive media</p>
+
+            <nav id="link-box">
+    
+    <a class="header-link" href="/">home</a>
+    
+    <a class="header-link" href="/blog.html">blog</a>
+    
+    <a class="header-link" href="/about.html">about</a>
+    
+</nav>
+<p></p>
+            <div id="blog-post-section">
+                <!--<h1 class="blog-post-title"> Moonsighted </h1>-->
+                <img class="img-banner" src=""/>
+                <p><img src="/assets/images/moonsighted/banner2.jpg" alt="cover" /></p>
+<h2 id="game-summary">Game Summary</h2>
+<p><em>Moonsighted</em> is a PC third-person hack-and-slash adventure about cultural and political strife in the face of technology and progress amongst moon-worshipping moths trapped in a cavern. Play as Mairu, a moth miner using the power of cave crystals to empower himself and lift his people out of the depths of the earth.</p>
+
+<p>Explore the dangerous depths of your underground home, fighting off cavernous critters to acquire more crystals and help lead your people back to the moonlight! This game portrays a fictional setting that depicts the dangers of unregulated and thoughtless progress of technology, where the player is put in the shoes of an unreliable narrator.</p>
+
+<h2 id="about-the-project">About the Project</h2>
+<p>I worked on this game in 2021 as part of my senior capstone project at WPI, in a team of four that included Dylan Valev, Jasmine Duerk, Kaamil Lokhandwala and myself. The project ran only fourteen weeks total: for the first seven we were working alongside our other coursework and focused on preproduction and concept design, and for the latter seven we were full-focused time on production, building out the entire game from scratch. Following the completion of the game, we wrote a research paper showcasing our methodology for designing, developing, and playtesting the game, which you can read <a href="https://digital.wpi.edu/concern/student_works/05741v73g?locale=en">here</a>.</p>
+
+<p>In 2022, we showcased Moonsighted at PAX East in Boston as part of the WPI expo booth. We were also recipients of the Provost’s MQP Award of the WPI Interactive Media &amp; Game Development department for our work on the project.</p>
+
+<h2 id="my-responsibilities">My Responsibilities</h2>
+<p>I was the principal artist on the team, and was responsible for concept art, character art &amp; animation, environment art, lighting, and level design, with Jasmine Duerk producing additional concept art and environmental models.</p>
+<h3 id="characters">Characters</h3>
+<figure>
+    <img class="captioned-image" src="/assets/images/moonsighted/mairu.webp" alt="Moonsighted's playable protagonist, a moth named Mairu" />
+    <figcaption>Moonsighted's playable protagonist, a moth named Mairu</figcaption>
+</figure>
+<p>The design of the moth characters was based on real-world luna moths, reinforcing the moon theme. There are two alternative colors for the moth’s textures, one for regular moths and one for those that have activated their “moonsighted” powers.
+For the art pipeline, I made the base model in Blender, which I was starting to learn at the time, imported to ZBrush to sculpt the hipoly model, then brought it to Maya for retopology &amp; UVs as I was more used to those tools. I made both texture sets in Substance Painter. Mixamo was used for rigging &amp; animation in order to save time in our short production schedule, but I did correct skinning issues in Maya before importing to Unity.</p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
     <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
 <script type="x-shader/x-fragment" id="image">
     precision highp float;
@@ -17,6 +70,7 @@
     uniform float iSmooth;
     uniform float iSeed1;
     uniform float iSeed2;
+    uniform vec2 iColumnSize;
     
     
     float hash(vec2 p) {
@@ -68,9 +122,14 @@
     }
     float sceneDistance(vec2 p) {
        
-        //float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
-        float rect = sdfRect(p,    iRes * 0.5 * vec2(1.0, 1.0),     vec2( max(0.256*iRes.x, min(260.0, 0.375*iRes.x)),  0.453*iRes.y),      20.0);
 
+// COLUMN RECT
+        //float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
+        float rect = sdfRect(p,    iRes * 0.5 * vec2(1.005, 1.0),     vec2( max(0.26675*iRes.x, min(260.0, 0.375*iRes.x)),  0.453*iRes.y),      20.0);
+        //float rect = sdfRect(p,  vec2(0.5,0.5), 0.001*vec2(iColumnSize.x/iRes.x, iColumnSize.y/iRes.y),  .0);
+
+
+// BLOBS
         float circleMouse1 = sdfCircle(p, vec2(iMouse.x - (iRes.x / 2.0), iMouse.y - (iRes.y / 2.0) + iScrollV), 0.008 * iRes.x); 
         float circleMouse2 = sdfCircle(p, vec2(0.013 * iSmooth * iRes.x * sin(4.5*iTime) + iMouse.x - (iRes.x / 2.0), 0.013 * iSmooth * iRes.x * cos(3.0*iTime) + iMouse.y - (iRes.y / 2.0)), 0.004 * iRes.x);
         
@@ -123,10 +182,11 @@
                     
         d = pow(1.0 - clamp(d, 0.0, 1.0), 0.2); 
         //d = d < 0.9 ? 0.0 : 1.0;
-        color = mix(gradient, vec4(1.0,1.0,1.0,1.0), d);
+        color = mix(gradient, vec4(0.9), d);
         
         
         //color = vec4(d,d,d,1.0);
+        //color = vec4(gl_FragCoord.x/iRes.x, gl_FragCoord.y/iRes.y, 0, 1);
         gl_FragColor = color;
     }
 </script>
@@ -143,13 +203,18 @@
     var smooth = 0.0;
     var targetSmooth = 2.0;
     var smoothLerp = 0.97;
+    var columnWidth = 600;
+    var columnHeight = 600;
     
-
-
     var seed1;
     var seed2;
 
     var timeInit;
+
+
+    const layoutMain = document.getElementById('layout-main');
+    const columnInner = document.getElementById('column-inner');
+
 
     document.addEventListener("mousemove", (event) => {
         mouseV = 1 + Math.min(0.1 * (Math.abs(targetMouseX - event.clientX) + Math.abs(targetMouseY - event.clientY)), 6);
@@ -161,7 +226,7 @@
         mouseV = 1;
         //targetSmooth = 0.0;
     });
-    const layoutMain = document.getElementById('layout-main');
+
     document.addEventListener("scroll", (event) => {
         var scrollCurrent = window.scrollY;
         scrollDiff = scrollPos - scrollCurrent;
@@ -197,6 +262,11 @@
             targetMouseX = ctx.cssWidth / 2;
             targetMouseY = ctx.cssHeight / 2;
             timeInit = new Date().getMilliseconds();
+
+            columnWidth = columnInner.offsetWidth;
+            columnHeight = columnInner.offsetHeight;
+            console.log(columnWidth + ', ' + columnHeight);
+            
             //timeInit = performance.timeOrigin;
             //timeInit = 1.0;
             /*targetSmooth = 1.0;
@@ -211,6 +281,11 @@
 
             mouseX = mouseX * (1-mouseLerp) + targetMouseX * mouseLerp;
             mouseY = mouseY * (1-mouseLerp) + targetMouseY * mouseLerp;
+
+            columnWidth = columnInner.offsetWidth;
+            columnHeight = columnInner.offsetHeight;
+            console.log(columnWidth + ', ' + columnHeight);
+
         },
         shaders: {
             image: {
@@ -223,61 +298,12 @@
                     iScrollV: (gl, loc) => gl.uniform1f(loc, scrollPos),
                     iSmooth: (gl, loc) => gl.uniform1f(loc, smooth),
                     iSeed1: (gl, loc) => gl.uniform1f(loc, seed1),
-                    iSeed2: (gl, loc) => gl.uniform1f(loc, seed2)
+                    iSeed2: (gl, loc) => gl.uniform1f(loc, seed2),
+                    iColumnSize: (gl, loc) => gl.uniform2f(loc, columnWidth, columnHeight)
                 }
             }
         }
     });
 </script>
-
-    <title> Template </title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/blogpost.css">
-    <link rel="stylesheet" href="/assets/css/images.css">
-    <link rel="icon"       href="/assets/images/favicon.png" type="image/x-icon">
-</head>
-<body>
-<div id="layout-main">
-    <div id="column">
-        <div id="column-inner">
-            <p id="name-header">charlie baldwin</p>
-<p id="sub-header">technical artist // shaders // vfx // interactive media</p>
-
-            <nav id="link-box">
-    
-    <a class="header-link" href="/">home</a>
-    
-    <a class="header-link" href="/blog.html">blog</a>
-    
-    <a class="header-link" href="/about.html">about</a>
-    
-</nav>
-<p></p>
-            <div id="blog-post-section">
-                <!--<h1 class="blog-post-title"> Template </h1>-->
-                <img class="img-banner" src=""/>
-                <p><img src="/assets/images/template_banner.jpg" alt="cover" /></p>
-<h2 id="section-h2">Section H2</h2>
-<p>Paragraph text inside the section.</p>
-
-<p>Another paragraph.</p>
-
-<h2 id="another-section-h2">Another Section H2</h2>
-<p>More paragraph. Click on <a href="https://cbaldwin.art">this link!</a></p>
-
-<h3 id="section-h3">Section H3</h3>
-<p>Paragraph again.</p>
-<figure>
-    <img class="captioned-image" src="/assets/images/sample.jpg" alt="Example captioned image" />
-    <figcaption>Example captioned image</figcaption>
-</figure>
-<p>Paragraph describing the image.</p>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>

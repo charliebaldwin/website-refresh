@@ -1,7 +1,7 @@
 ---
-layout: work
+layout: project
 title: Template
-categories: works
+categories: projects
 image: /assets/images/template_banner.jpg
 description: Moonsighted
 ---

@@ -35,7 +35,7 @@ plugins:
     
     
 collections:
-  works:
+  projects:
     output: true
   blogposts:
     output: true

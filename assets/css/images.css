@@ -1,5 +1,6 @@
 .captioned-image {
     max-height: 40vh;
+    aspect-ratio: 4/3;
 }
 .img-banner { 
     border-radius: 1.5vw;
