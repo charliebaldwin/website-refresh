@@ -1,8 +1,8 @@
 ---
 layout: project
-title:  "artwork02"
+title:  "artwork03"
 categories: projects
 image: /assets/images/sample_image.webp
-description: beautiful orangutan thing
+description: artwork 3
 ---
 this is an artwork!

@@ -3,7 +3,7 @@ layout: project
 title:  "My First Artwork"
 categories: projects
 image: /assets/images/sample_image.webp
-description: default uv texture
+description: artwork 1
 ---
 
 this is an artwork!
