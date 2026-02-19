@@ -4,6 +4,7 @@ title: Template
 categories: projects
 image: /assets/images/sample_image.webp
 description: Project Template
+public: false
 ---
 ![cover](/assets/images/template_banner.jpg)
 ## Section H2

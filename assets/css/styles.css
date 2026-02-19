@@ -122,7 +122,7 @@ body {
     flex-direction: column;
     align-items: start;
     justify-content: flex-start;
-    gap: 1vw;
+    gap: 1vh;
     flex-wrap: wrap;
 }
 #about-text-container {
@@ -130,7 +130,7 @@ body {
     border-radius: 0vw;
     padding: max(5vw, 5px);
     padding-top: 1vh;
-    font-size: min(max(2vw, 10px), 16px);
+    font-size: max(1.2rem, 15px);
     border: dashed 0px #dddddd;
     display: flex;
     flex-direction: column;
@@ -142,22 +142,27 @@ body {
 .art-grp {
     width: 100%;
     margin-outside: 4vw;
-    height: min(30vh, 50vw);
-    border: dashed 0px #efefef;
+    /* height: min(20vh, 35vw); */
+    border: solid 0px #efefef;
+    border-radius: max(1.25vw, 21px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;   
+    padding: 0px;
+    box-shadow: rgba(0,0,0,0.2) 4px 4px 10px;
+
 }
 .art-img-container {
     border-width: 0px;
     border-color: #00ff00;
-    border-radius: max(1vw, 16px);
+    border-radius: max(1.25vw, 21px);
+    display: flex;
     /* align-items:normal; */
     justify-items: center;
     aspect-ratio: 1.33333333;
     /* max-height: 85%; */
-    width: 50%;
+    width: 30%;
     overflow: clip;
     padding: 0;
 
@@ -165,6 +170,7 @@ body {
 }
 .art-img {
     object-fit:fill;
+    width: 100%;
     /* aspect-ratio: 1.33333333; */
     /* object-position: top; */
     /* border-radius: 1vw; */
@@ -176,17 +182,34 @@ body {
     border-style: solid;
     border-color: #0000ff;
     /* flex-grow: .5; */
-    width: 50%;
+    width: 70%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: top;
+    align-items: top;
+    padding-bottom: 24px;
+    padding-left: 12px;
+    gap: 5px;
 }
-.art-label {
+.art-title {
     margin: 0;
     font-family: LexendBold;
     font-color: #000000;
     font-size: max(2rem, 24px);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: 100%;
+    text-align: left;
+    text-anchor: end;
+    border-color: #ff0000;
+    border-radius: 1vw;
+    box-shadow: rgba(0,0,0,0) 2px 2px 6px;
+    overflow: clip;
+}
+.art-desc {
+    margin: 0;
+    font-family: LexendRegular;
+    font-color: #000000;
+    font-size: max(1.2rem, 15px);
     padding: 0.5rem 1rem 0.5rem 1rem;
     width: 100%;
     text-align: left;

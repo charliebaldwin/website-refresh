@@ -1,8 +1,9 @@
 ---
 layout: project
-title:  "artwork03"
+title:  "Project 3"
 categories: projects
 image: /assets/images/sample_image.webp
-description: artwork 3
+description: Brief description of Project 3
+public: true
 ---
 this is an artwork!

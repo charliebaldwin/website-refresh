@@ -2,8 +2,9 @@
 layout: project
 title: Moonsighted
 categories: projects
-image: /assets/images/moonsighted/banner2.jpg
-description: Moonsighted
+image: /assets/images/moonsighted/cover.jpg
+description: Action-adventure RPG built in Unity
+public: true
 ---
 ![cover](/assets/images/moonsighted/banner2.jpg)
 ## Game Summary

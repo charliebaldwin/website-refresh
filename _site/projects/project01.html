@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <title> My First Artwork </title>
+    <title> Project 1 </title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/blogpost.css">
     <link rel="stylesheet" href="/assets/css/images.css">
@@ -30,7 +30,7 @@
 </nav>
 <p></p>
             <div id="blog-post-section">
-                <!--<h1 class="blog-post-title"> My First Artwork </h1>-->
+                <!--<h1 class="blog-post-title"> Project 1 </h1>-->
                 <img class="img-banner" src=""/>
                 <p>this is an artwork!</p>
 
@@ -107,8 +107,9 @@
 
 // COLUMN RECT
         //float rect = sdfRect(p, iRes * 0.5, vec2(max(0.225 * iRes.x, min(300., 0.35 * iRes.x)), 0.465 * iRes.y), max(0.03 * min(iRes.x, iRes.y), 30.0));
-        float rect = sdfRect(p,    iRes * 0.5 * vec2(1.005, 1.0),     vec2( max(0.26675*iRes.x, min(260.0, 0.375*iRes.x)),  0.453*iRes.y),      20.0);
-        //float rect = sdfRect(p,  vec2(0.5,0.5), 0.001*vec2(iColumnSize.x/iRes.x, iColumnSize.y/iRes.y),  .0);
+        //float rect = sdfRect(p,    iRes * 0.5 * vec2(1.01, 1.0),     vec2( max(0.26675*iRes.x, min(260.0, 0.375*iRes.x)),  0.453*iRes.y),      20.0);
+        //float rect = sdfRect(p,    iRes * 0.5 * vec2(1.01, 1.0),     vec2( .35*iRes.x,  0.25*iRes.y),      20.0);
+        float rect = sdfRect(p,  iRes * 0.5 * vec2(1.01, 1.0) , 0.71*vec2(iColumnSize.x, iColumnSize.y),  50.0);
 
 
 // BLOBS
@@ -164,7 +165,7 @@
                     
         d = pow(1.0 - clamp(d, 0.0, 1.0), 0.2); 
         //d = d < 0.9 ? 0.0 : 1.0;
-        color = mix(gradient, vec4(0.9), d);
+        color = mix(gradient, vec4(1.0), d);
         
         
         //color = vec4(d,d,d,1.0);
