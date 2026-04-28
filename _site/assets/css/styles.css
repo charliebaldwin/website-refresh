@@ -84,10 +84,8 @@ body {
     width: max(50%, min(630px, 75%));
     margin-top: 2vh;
     margin-bottom: 2vh;
-    margin-right: auto;
-    margin-left: auto;
     padding: 2vh 2vw 2vw 2vw;
-    background-color: #ffffff55;
+    background-color: #ffffff;
     border-radius: 30px;
     /* border-width: 1px;
     border: #000000;
